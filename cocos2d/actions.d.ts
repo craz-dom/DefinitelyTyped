@@ -100,4 +100,46 @@
         getPoints(): Array<cc.Point>;
         setPoints(points: Array<cc.Point>): void;
     }
+
+    export function cardinalSplineTo(duration: number, points: Array<cc.Point>, tension: number): CardinalSplineTo;
+
+    export module CardinalSplineTo {
+        export function create(duration: number, points: Array<cc.Point>, tension: number): CardinalSplineTo;
+    }
+
+    export class CardinalSplineBy extends CardinalSplineTo {
+        constructor(duration: number, points: Array<cc.Point>, tension: number);
+
+        reverse(): CardinalSplineBy;
+
+        clone(): CardinalSplineBy;
+    }
+
+    export function cardinalSplineBy(duration: number, points: Array<cc.Point>, tension: number): CardinalSplineBy;
+
+    export module CardinalSplineBy {
+        export function create(duration: number, points: Array<cc.Point>, tension: number): CardinalSplineBy;
+    }
+
+    export class CatmullRomTo extends CardinalSplineTo {
+        constructor(dt: number, points: Array<cc.Point>);
+
+        initWithDuration(dt: number, points: Array<cc.Point>): boolean;
+
+        clone(): CatmullRomTo;
+    }
+    export function catmullRomTo(dt: number, points: Array<cc.Point>): CatmullRomTo;
+    export module CatmullRomTo {
+        export function create(dt: number, points: Array<cc.Point>): CatmullRomTo;
+    }
+
+    export class CatmullRomBy extends CatmullRomTo {
+        constructor(dt: number, points: Array<cc.Point>);
+        clone(): CatmullRomBy;
+    }
+    export function catmullRomBy(dt: number, points: Array<cc.Point>): CatmullRomBy;
+    export module CatmullRomBy {
+        export function create(dt: number, points: Array<cc.Point>): CatmullRomBy;
+    }
+
 }
