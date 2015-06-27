@@ -718,7 +718,10 @@
     }
     export function callFunc(selector: Function): CallFunc;
     export function callFunc(selector: Function, selectorTarget: Object, data: any): CallFunc;
-
+    export module CallFunc {
+        export function create(selector: Function): CallFunc;
+        export function create(selector: Function, selectorTarget: Object, data: any): CallFunc;
+    }
 
 
 
@@ -741,13 +744,8 @@
 
 
     export class ActionInterval { }
-    export class Point { }
-    export class Class {
-    }
 
     export class Node { }
-
-    export class Rect { }
 
     export class ReverseTime { }
 }
