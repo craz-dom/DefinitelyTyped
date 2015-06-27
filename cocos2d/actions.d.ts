@@ -101,21 +101,16 @@
         getPoints(): Array<cc.Point>;
         setPoints(points: Array<cc.Point>): void;
     }
-
     export function cardinalSplineTo(duration: number, points: Array<cc.Point>, tension: number): CardinalSplineTo;
-
     export module CardinalSplineTo {
         export function create(duration: number, points: Array<cc.Point>, tension: number): CardinalSplineTo;
     }
 
     export class CardinalSplineBy extends CardinalSplineTo {
         constructor(duration: number, points: Array<cc.Point>, tension: number);
-
         reverse(): CardinalSplineBy;
-
         clone(): CardinalSplineBy;
     }
-
     export function cardinalSplineBy(duration: number, points: Array<cc.Point>, tension: number): CardinalSplineBy;
 
     export module CardinalSplineBy {
@@ -296,7 +291,7 @@
     export module EaseElasticIn {
         export function crate(action: ActionInterval, period: number): EaseElasticIn;
     }
-    interface easeElasticInObj  {
+    interface easeElasticInObj {
         easing(dt: number): number;
         reverse(): easeElasticInObj;
     }
@@ -330,7 +325,7 @@
     export function easeElasticInOut(period): easeElasticInOutObj;
 
     export class EaseBounce extends ActionEase {
-        bounceTime(time1: number):number;
+        bounceTime(time1: number): number;
         clone(): EaseBounce;
         reverse(): EaseBounce;
     }
@@ -421,7 +416,7 @@
         constructor(action: Action);
         clone(): EaseBezierAction;
         reverse(): EaseBezierAction;
-        setBezierParamer(p0: number, p1: number, p2: number, p3: number):void;
+        setBezierParamer(p0: number, p1: number, p2: number, p3: number): void;
     }
     export module EaseBezierAction {
         export function crate(action: Action): EaseBezierAction;
@@ -432,18 +427,327 @@
         reverse: () => easeBezierAction;
     }
 
+    export class EaseQuadraticActionIn extends ActionEase {
+        clone(): EaseQuadraticActionIn;
+        reverse(): EaseQuadraticActionIn;
+    }
+    export module EaseQuadraticActionIn {
+        export function create(action: Action): EaseQuadraticActionIn;
+    }
+    interface easeQuadraticActionIn {
+        easing(time: number): number;
+        reverse(): easeQuadraticActionIn;
+    }
+    export function easeQuadraticActionIn(): easeQuadraticActionIn;
+
+    export class EaseQuadraticActionOut extends ActionEase {
+        clone(): EaseQuadraticActionOut;
+        reverse(): EaseQuadraticActionOut;
+    }
+    export module EaseQuadraticActionOut {
+        export function create(action: Action): EaseQuadraticActionOut;
+    }
+    interface easeQuadraticActionOut {
+        easing(time: number): number;
+        reverse(): easeQuadraticActionOut;
+    }
+    export function easeQuadraticActionOut(): easeQuadraticActionOut;
+
+    export class EaseQuadraticActionInOut extends ActionEase {
+        clone(): EaseQuadraticActionInOut;
+        reverse(): EaseQuadraticActionInOut;
+    }
+    export module EaseQuadraticActionInOut {
+        export function create(action: Action): EaseQuadraticActionInOut;
+    }
+    interface easeQuadraticActionInOut {
+        easing(time: number): number;
+        reverse(): easeQuadraticActionInOut;
+    }
+    export function easeQuadraticActionInOut(): easeQuadraticActionInOut;
+
+
+    export class EaseQuarticActionIn extends ActionEase {
+        clone(): EaseQuarticActionIn;
+        reverse(): EaseQuarticActionIn;
+    }
+    export module EaseQuarticActionIn {
+        export function create(action: Action): EaseQuarticActionIn;
+    }
+    interface easeQuarticActionIn {
+        easing(time: number): number;
+        reverse(): easeQuarticActionIn;
+    }
+    export function easeQuarticActionIn(): easeQuarticActionIn;
+
+    export class EaseQuarticActionOut extends ActionEase {
+        clone(): EaseQuarticActionOut;
+        reverse(): EaseQuarticActionOut;
+    }
+    export module EaseQuarticActionOut {
+        export function create(action: Action): EaseQuarticActionOut;
+    }
+    interface easeQuarticActionOut {
+        easing(time: number): number;
+        reverse(): easeQuarticActionOut;
+    }
+    export function easeQuarticActionOut(): easeQuarticActionOut;
+
+    export class EaseQuarticActionInOut extends ActionEase {
+        clone(): EaseQuarticActionInOut;
+        reverse(): EaseQuarticActionInOut;
+    }
+    export module EaseQuarticActionInOut {
+        export function create(action: Action): EaseQuarticActionInOut;
+    }
+    interface easeQuarticActionInOut {
+        easing(time: number): number;
+        reverse(): easeQuarticActionInOut;
+    }
+    export function easeQuarticActionInOut(): easeQuarticActionInOut;
+
+
+    export class EaseQuinticActionIn extends ActionEase {
+        clone(): EaseQuinticActionIn;
+        reverse(): EaseQuinticActionIn;
+    }
+    export module EaseQuinticActionIn {
+        export function create(action: Action): EaseQuinticActionIn;
+    }
+    interface easeQuinticActionIn {
+        easing(time: number): number;
+        reverse(): easeQuinticActionIn;
+    }
+    export function easeQuinticActionIn(): easeQuinticActionIn;
+
+    export class EaseQuinticActionOut extends ActionEase {
+        clone(): EaseQuinticActionOut;
+        reverse(): EaseQuinticActionOut;
+    }
+    export module EaseQuinticActionOut {
+        export function create(action: Action): EaseQuinticActionOut;
+    }
+    interface easeQuinticActionOut {
+        easing(time: number): number;
+        reverse(): easeQuinticActionOut;
+    }
+    export function easeQuinticActionOut(): easeQuinticActionOut;
+
+    export class EaseQuinticActionInOut extends ActionEase {
+        clone(): EaseQuinticActionInOut;
+        reverse(): EaseQuinticActionInOut;
+    }
+    export module EaseQuinticActionInOut {
+        export function create(action: Action): EaseQuinticActionInOut;
+    }
+    interface easeQuinticActionInOut {
+        easing(time: number): number;
+        reverse(): easeQuinticActionInOut;
+    }
+    export function easeQuinticActionInOut(): easeQuinticActionInOut;
+
+
+    export class EaseCircleActionIn extends ActionEase {
+        clone(): EaseCircleActionIn;
+        reverse(): EaseCircleActionIn;
+    }
+    export module EaseCircleActionIn {
+        export function create(action: Action): EaseCircleActionIn;
+    }
+    interface easeCircleActionIn {
+        easing(time: number): number;
+        reverse(): easeCircleActionIn;
+    }
+    export function easeCircleActionIn(): easeCircleActionIn;
+
+    export class EaseCircleActionOut extends ActionEase {
+        clone(): EaseCircleActionOut;
+        reverse(): EaseCircleActionOut;
+    }
+    export module EaseCircleActionOut {
+        export function create(action: Action): EaseCircleActionOut;
+    }
+    interface easeCircleActionOut {
+        easing(time: number): number;
+        reverse(): easeCircleActionOut;
+    }
+    export function easeCircleActionOut(): easeCircleActionOut;
+
+    export class EaseCircleActionInOut extends ActionEase {
+        clone(): EaseCircleActionInOut;
+        reverse(): EaseCircleActionInOut;
+    }
+    export module EaseCircleActionInOut {
+        export function create(action: Action): EaseCircleActionInOut;
+    }
+    interface easeCircleActionInOut {
+        easing(time: number): number;
+        reverse(): easeCircleActionInOut;
+    }
+    export function easeCircleActionInOut(): easeCircleActionInOut;
+
+
+    export class EaseCubicActionIn extends ActionEase {
+        clone(): EaseCubicActionIn;
+        reverse(): EaseCubicActionIn;
+    }
+    export module EaseCubicActionIn {
+        export function create(action: Action): EaseCubicActionIn;
+    }
+    interface easeCubicActionIn {
+        easing(time: number): number;
+        reverse(): easeCubicActionIn;
+    }
+    export function easeCubicActionIn(): easeCubicActionIn;
+
+    export class EaseCubicActionOut extends ActionEase {
+        clone(): EaseCubicActionOut;
+        reverse(): EaseCubicActionOut;
+    }
+    export module EaseCubicActionOut {
+        export function create(action: Action): EaseCubicActionOut;
+    }
+    interface easeCubicActionOut {
+        easing(time: number): number;
+        reverse(): easeCubicActionOut;
+    }
+    export function easeCubicActionOut(): easeCubicActionOut;
+
+    export class EaseCubicActionInOut extends ActionEase {
+        clone(): EaseCubicActionInOut;
+        reverse(): EaseCubicActionInOut;
+    }
+    export module EaseCubicActionInOut {
+        export function create(action: Action): EaseCubicActionInOut;
+    }
+    interface easeCubicActionInOut {
+        easing(time: number): number;
+        reverse(): easeCubicActionInOut;
+    }
+    export function easeCubicActionInOut(): easeCubicActionInOut;
+
+
+    export class ActionInstant extends FiniteTimeAction {
+        reverse(): Action;
+        clone(): FiniteTimeAction;
+    }
+
+    export class Show extends ActionInstant {
+        reverse(): Hide;
+        clone(): Show;
+    }
+    export function show(): Show;
+    export module Show {
+        export function create(): Show;
+    }
+
+    export class Hide extends ActionInstant {
+        reverse(): Show;
+        clone(): Hide;
+    }
+    export function hide(): Hide;
+    export module Hide {
+        export function create(): Hide;
+    }
+
+
+    export class ToggleVisibility extends ActionInstant {
+        reverse(): ToggleVisibility;
+        clone(): ToggleVisibility;
+    }
+    export function toggleVisibility(): ToggleVisibility;
+    export module ToggleVisibility {
+        export function create(): ToggleVisibility;
+    }
+
+    export class RemoveSelf extends ActionInstant {
+        constructor(isNeedCleanUp?: boolean);
+        init(isNeedCleanUp?: boolean): boolean;
+        reverse(): RemoveSelf;
+        clone(): RemoveSelf;
+    } 
+    export function removeSelf(isNeedCleanUp?: boolean): RemoveSelf;
+    export module RemoveSelf {
+        export function create(isNeedCleanUp?: boolean): RemoveSelf;
+    }
+
+    export class FlipX extends ActionInstant {
+        constructor(flip: boolean);
+        initWithFlipX(flip: boolean): boolean;
+        reverse(): FlipX;
+        clone(): FlipX;
+    }
+    export function flipX(flip: boolean): FlipX;
+    export module FlipX {
+        export function create(flip: boolean): FlipX;
+    }
+
+    export class FlipY extends ActionInstant {
+        constructor(flip: boolean);
+        initWithFlipY(flip: boolean): boolean;
+        reverse(): FlipY;
+        clone(): FlipY;
+    }
+    export function flipY(flip: boolean): FlipY;
+    export module FlipY {
+        export function create(flip: boolean): FlipY;
+    }
+
+    export class Place extends ActionInstant {
+        constructor(pos: Point);
+        constructor(x: number, y:number);
+        initWithPosition(x: number, y: number): boolean;
+        clone(): Place;
+    }
+    export function place(pos: Point): Place;
+    export function place(x: number, y: number): Place;
+    export module Place {
+        export function create(pos: Point): Place;
+        export function create(x: number, y: number): Place;
+    }
+
+    export class CallFunc extends ActionInstant {
+        constructor(selector: Function);
+        constructor(selector: Function, selectorTarget: Object, data: any);
+        initWithFunction(selector: Function): boolean;
+        initWithFunction(selector: Function, selectorTarget: Object, data: any): boolean;
+        execute(): void;
+        getTargetCallback(): Object;
+        setTargetCallback(sel: Object): void;
+        clone(): CallFunc;
+    }
+    export function callFunc(selector: Function): CallFunc;
+    export function callFunc(selector: Function, selectorTarget: Object, data: any): CallFunc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
     export class ActionInterval { }
-    export class Point{ }
+    export class Point { }
     export class Class {
     }
 
-    export class Node{}
+    export class Node { }
 
-    export class Rect{}
+    export class Rect { }
 
-    export class ReverseTime{}
+    export class ReverseTime { }
 }
