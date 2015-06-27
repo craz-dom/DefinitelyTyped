@@ -192,4 +192,38 @@
     export function rectUnion(ra: Rect, rb: Rect): Rect;
     export function rectIntersection(ra: Rect, rb: Rect): Rect;
 
+    export class SAXParser extends Class {
+        constructor();
+        parce(xmlTxt: string): Document;
+    }
+
+    export class PlistParser extends SAXParser {
+        parce(xmlTxt: string): Document;
+        parce(xmlTxt: string): Object;
+        parce(xmlTxt: string): Array<any>;
+        parce(xmlTxt: string): string;
+        parce(xmlTxt: string): boolean;
+        parce(xmlTxt: string): number;
+    }
+
+    export var FIX_ARTIFACTS_BY_STRECHING_TEXEL: number;
+    export var DIRECTOR_STATS_POSITION: Point;
+    export var DIRECTOR_FPS_INTERVAL: number;
+    export var COCOSNODE_RENDER_SUBPIXEL: number;
+    export var SPRITEBATCHNODE_RENDER_SUBPIXEL: number;
+    export var OPTIMIZE_BLEND_FUNC_FOR_PREMULTIPLIED_ALPHA: number;
+    export var TEXTURE_ATLAS_USE_TRIANGLE_STRIP: number;
+    export var TEXTURE_ATLAS_USE_VAO: number;
+    export var TEXTURE_NPOT_SUPPORT: number;
+    export var RETINA_DISPLAY_SUPPORT: number;
+    export var RETINA_DISPLAY_FILENAME_SUFFIX: string;
+    export var USE_LA88_LABELS: number;
+    export var SPRITE_DEBUG_DRAW: number;
+    export var SPRITEBATCHNODE_DEBUG_DRAW: number;
+    export var LABELATLAS_DEBUG_DRAW: number;
+    export var LABELBMFONT_DEBUG_DRAW: number;
+    export var IS_RETINA_DISPLAY_SUPPORTED: number;
+    export var DEFAULT_ENGINE: string;
+    export var ENABLE_STACKABLE_ACTIONS: number;
+    export var ENABLE_GL_STATE_CACHE: number;
 }
