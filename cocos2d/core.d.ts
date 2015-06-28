@@ -198,12 +198,8 @@
     }
 
     export class PlistParser extends SAXParser {
-        parce(xmlTxt: string): Document;
-        parce(xmlTxt: string): Object;
-        parce(xmlTxt: string): Array<any>;
-        parce(xmlTxt: string): string;
-        parce(xmlTxt: string): boolean;
-        parce(xmlTxt: string): number;
+        parce(xmlTxt: string): any;
+        parce<T>(xmlTxt: string): T;
     }
 
     export var FIX_ARTIFACTS_BY_STRECHING_TEXEL: number;
@@ -226,4 +222,29 @@
     export var DEFAULT_ENGINE: string;
     export var ENABLE_STACKABLE_ACTIONS: number;
     export var ENABLE_GL_STATE_CACHE: number;
+
+    export function $(x: string): Selector;
+    export function $(x: HTMLElement): Selector;
+    interface Selector {
+        find(x: string): Selector;
+        find(x: HTMLElement): Selector;
+        hasClass(cls: string): boolean;
+        addClass(cls: string): Selector;
+        removeClass(cls: string): Selector;
+        remove(): void;
+        appendTo(x: HTMLElement): Selector;
+        appendTo(x: Selector): Selector;
+        prependTo(x: HTMLElement): Selector;
+        prependTo(x: Selector): Selector;
+        transforms(): Selector;
+        position: { x: number; y: number };
+        rotation: number;
+        scale: { x: number; y: number };
+        skew: { x: number; y: number };
+        translates(x: number, y: number): Selector;
+        rotate(x: number): Selector;
+        resize(x: number, y: number): Selector;
+        setSkew(x: number, y: number): Selector;
+
+    }
 }
