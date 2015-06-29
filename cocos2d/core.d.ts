@@ -54,13 +54,13 @@
         export function getUrl(basePath: string, url?: string): string;
         export function load(url: string, option: Object, loadCallback: Function| Object): AsyncPool;
         export function load(url: string, loadCallback: Function| Object): AsyncPool;
-        export function loadAliases(url: string, callback?: Function):void;
+        export function loadAliases(url: string, callback?: Function): void;
         export function register(extNames: string, loader: Function): void;
-        export function getRes(url:string):any;
+        export function getRes(url: string): any;
         export function release(url: string): void;
-        export function releaseAll():void;
+        export function releaseAll(): void;
     }
-    export function formatStr(str: string, ... args: string[]):string;
+    export function formatStr(str: string, ...args: string[]): string;
     export function create3DContext(canvas: HTMLCanvasElement, opt_attribs: Object): WebGLRenderingContext;
 
     export var ORIENTATION_PORTRAIT: Number;
@@ -83,10 +83,10 @@
         config: Object;
         onStart: Function;
         onStop: Function;
-        setFrameRate(frameRate: any):void;
-        restart():void;
+        setFrameRate(frameRate: any): void;
+        restart(): void;
         run(id: any): void;
-        prepare(cb: ()=>void):void;
+        prepare(cb: () => void): void;
     }
     interface IConfigKey {
         engineDir: string;
@@ -98,6 +98,87 @@
         renderMode: string;
         jsList: string;
         classReleaseMode: string;
+    }
+
+    export module sys {
+        export var LANGUAGE_ENGLISH: string;
+        export var LANGUAGE_CHINESE: string;
+        export var LANGUAGE_FRENCH: string;
+        export var LANGUAGE_ITALIAN: string;
+        export var LANGUAGE_GERMAN: string;
+        export var LANGUAGE_SPANISH: string;
+        export var LANGUAGE_DUTCH: string;
+        export var LANGUAGE_RUSSIAN: string;
+        export var LANGUAGE_KOREAN: string;
+        export var LANGUAGE_JAPANESE: string;
+        export var LANGUAGE_HUNGARIAN: string;
+        export var LANGUAGE_PORTUGUESE: string;
+        export var LANGUAGE_ARABIC: string;
+        export var LANGUAGE_NORWEGIAN: string;
+        export var LANGUAGE_POLISH: string;
+
+        export var OS_IOS: string;
+        export var OS_ANDROID: string;
+        export var OS_WINDOWS: string;
+        export var OS_MARMALADE: string;
+        export var OS_LINUX: string;
+        export var OS_BADA: string;
+        export var OS_BLACKBERRY: string;
+        export var OS_OSX: string;
+        export var OS_WP8: string;
+        export var OS_WINRT: string;
+        export var OS_UNKNOWN: string;
+
+        export var UNKNOWN: number;
+        export var IOS: number;
+        export var ANDROID: number;
+        export var WIN32: number;
+        export var MARMALADE: number;
+        export var LINUX: number;
+        export var BADA: number;
+        export var BLACKBERRY: number;
+        export var MACOS: number;
+        export var NACL: number;
+        export var EMSCRIPTEN: number;
+        export var TIZEN: number;
+        export var QT5: number;
+        export var WP8: number;
+        export var WINRT: number;
+        export var MOBILE_BROWSER: number;
+        export var DESKTOP_BROWSER: number;
+
+        export var BROWSER_TYPE_WECHAT: string;
+        export var BROWSER_TYPE_ANDROID: string;
+        export var BROWSER_TYPE_IE: string;
+        export var BROWSER_TYPE_QQ: string;
+        export var BROWSER_TYPE_MOBILE_QQ: string;
+        export var BROWSER_TYPE_UC: string;
+        export var BROWSER_TYPE_360: string;
+        export var BROWSER_TYPE_BAIDU_APP: string;
+        export var BROWSER_TYPE_BAIDU: string;
+        export var BROWSER_TYPE_MAXTHON: string;
+        export var BROWSER_TYPE_OPERA: string;
+        export var BROWSER_TYPE_OUPENG: string;
+        export var BROWSER_TYPE_MIUI: string;
+        export var BROWSER_TYPE_FIREFOX: string;
+        export var BROWSER_TYPE_SAFARI: string;
+        export var BROWSER_TYPE_CHROME: string;
+        export var BROWSER_TYPE_LIEBAO: string;
+        export var BROWSER_TYPE_QZONE: string;
+        export var BROWSER_TYPE_SOUGOU: string;
+        export var BROWSER_TYPE_UNKNOWN: string;
+
+        export var isNative: boolean;
+        export var isMobile: boolean;
+
+        export var platform: number;
+        export var language: string;
+        export var browserType: string;
+        export var os: string;
+        export var localStorage: Object;
+        export function isObjectValid(object): boolean;
+        export function dump(): void;
+        export function openUrl(url: string): void;
     }
 
     export class Class {
@@ -340,6 +421,91 @@
         rotate(x: number): Selector;
         resize(x: number, y: number): Selector;
         setSkew(x: number, y: number): Selector;
-
     }
+    export module $ {
+        export var pfx: string;
+        export var hd: boolean;
+        export var trans: string;
+        export function translate(a: { x: number; y: number;}): string;
+        export function rotate(a: number): string;
+        export function scale(a: number): string;
+        export function skew(a: number): string;
+        export function findpos(obj: Element): { x: number; y: number; };
+    }
+    export function $new(x: string): Element;
+
+    export var INVALID_INDEX: number;
+    export var PI: number;
+    export var FLT_MAX: number;
+    export var FLT_MIN: number;
+    export var RAD: number;
+    export var DEG: number;
+    export var UINT_MAX: number;
+    export function swap(x: string, y: string, ref: Object): void;
+    export function lerp(a:number, b:number, r:number): void;
+    export function rand(): number;
+    export function randomMinus1To1(): number;
+    export function random0To1(): number;
+    export function degreesToRadians(angle:number): number;
+    export function radiansToDegrees(angle: number): number;
+    export function radiansToDegress(angle: number): number;
+    export var REPEAT_FOREVER: number;
+    export var BLEND_SRC: number;
+    export var BLEND_DST: number;
+    export function nodeDrawSetup(node: Node): void;
+    export function enableDefaultGLStates(): void;
+    export function disableDefaultGLStates(): void;
+    export function incrementGLDraws(addNumber: number): void;
+    export var FLT_EPSILON: number;
+    export function contentScaleFactor(): number;
+    export function pointPointsToPixels(points: Point):Point;
+    export function pointPixelsToPoints(pixels: Point):Point;
+    export function sizePointsToPixels(sizeInPoints: Size):Size;
+    export function sizePixelsToPoints(sizeInPixels: Size): Size;
+    export function rectPixelsToPoints(pixel: Rect): Rect;
+    export function rectPointsToPixels(point: Rect): Rect;
+    export var ONE: number;
+    export var ZERO: number;
+    export var SRC_ALPHA: number;
+    export var SRC_ALPHA_SATURATE: number;
+    export var SRC_COLOR: number;
+    export var DST_ALPHA: number;
+    export var DST_COLOR: number;
+    export var ONE_MINUS_SRC_ALPHA: number;
+    export var ONE_MINUS_SRC_COLOR: number;
+    export var ONE_MINUS_DST_ALPHA: number;
+    export var ONE_MINUS_DST_COLOR: number;
+    export var ONE_MINUS_CONSTANT_ALPHA: number;
+    export var ONE_MINUS_CONSTANT_COLOR: number;
+    export var LINEAR: number;
+    export var REPEAT: number;
+    export var CLAMP_TO_EDGE: number;
+    export var MIRRORED_REPEAT: number;
+    export function checkGLErrorDebug(): void;
+    export var DEVICE_ORIENTATION_PORTRAIT: number;
+    export var DEVICE_ORIENTATION_LANDSCAPE_LEFT: number;
+    export var DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN: number;
+    export var DEVICE_ORIENTATION_LANDSCAPE_RIGHT: number;
+    export var DEVICE_MAX_ORIENTATIONS: number;
+    export var VERTEX_ATTRIB_FLAG_NONE: number;
+    export var VERTEX_ATTRIB_FLAG_POSITION: number;
+    export var VERTEX_ATTRIB_FLAG_COLOR: number;
+    export var VERTEX_ATTRIB_FLAG_TEX_COORDS: number;
+    export var VERTEX_ATTRIB_FLAG_POS_COLOR_TEX: number;
+    export var GL_ALL: number;
+    export var VERTEX_ATTRIB_POSITION: number;
+    export var VERTEX_ATTRIB_COLOR: number;
+    export var VERTEX_ATTRIB_TEX_COORDS: number;
+    export var VERTEX_ATTRIB_MAX: number;
+    export var UNIFORM_PMATRIX: number;
+    export var UNIFORM_MVMATRIX: number;
+    export var UNIFORM_MVPMATRIX: number;
+    export var UNIFORM_TIME: number;
+    export var UNIFORM_SINTIME: number;
+    export var UNIFORM_COSTIME: number;
+    export var UNIFORM_RANDOM01: number;
+    export var UNIFORM_SAMPLER: number;
+    export var UNIFORM_MAX: number;
+    export var UNIFORM_COSTIME: number;
+    export var UNIFORM_COSTIME: number;
 }
