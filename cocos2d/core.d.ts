@@ -1,8 +1,103 @@
 ﻿declare module cc {
+    export function newElement(x: string): HTMLElement;
+    export function _addEventListener(type: string, listener: EventListener, useCapture?: boolean): void;
+    export function each(obj: Object, iterator: Function, context?: Object);
+    export function each(obj: Array<any>, iterator: Function, context?: Object);
+    export function extend(target: Object, sources: Array<Object>): Object;
+    export function isFunction(obj: any): boolean;
+    export function isNumber(obj: any): boolean;
+    export function isString(obj: any): boolean;
+    export function isArray(obj: any): boolean;
+    export function isUndefined(obj: any): boolean;
+    export function isObject(obj: any): boolean;
+    export function isCrossOrigin(obj: any): boolean;
+    export class AsyncPool {
+        constructor(srcObj: Object, limit: number, iterator: Function, onEnd: Function, target: Object);
+        constructor(srcObj: Array<any>, limit: number, iterator: Function, onEnd: Function, target: Object);
+        size: number;
+        finishedSize: number;
+        onIterator(iterator: Function, target: Object);
+        onEnd(endCb: Function, endCbTarget: Object);
+        flow();
+    }
+    export module async {
+        export function series(tasks: Object|Array<any>, cb?: Function, target?: Object): AsyncPool;
+        export function parallel(tasks: Object|Array<any>, cb?: Function, target?: Object): AsyncPool;
+        export function waterfall(tasks: Object|Array<any>, cb?: Function, target?: Object): AsyncPool;
+        export function map(tasks: Object|Array<any>, iterator: Function|Object, callback?: Function, target?: Object): AsyncPool;
+        export function mapLimit(tasks: Object|Array<any>, limit: number, iterator: Function|Object, callback: Function, target?: Object): AsyncPool;
+    }
+    export module path {
+        export function join(...args: string[]): string;
+        export function extname(pathStr: string): string;
+        export function mainFileName(fileName: string): string;
+        export function basename(pathStr: string, extname?: string): string;
+        export function dirname(pathStr: string): string;
+        export function changeExtname(pathStr: string, extname?: string): string;
+        export function changeBasename(pathStr: string, basename: string, isSameExt?: boolean): string;
+    }
     export module loader {
         export function loadBinary(url: string, cb: (info: string, array: Uint8Array) => void): void;
-
         export function loadBinarySync(url: string): Uint8Array;
+
+        export var resPath: string;
+        export var audioPath: string;
+        export var cache: string;
+        export function getXMLHttpRequest(): XMLHttpRequest;
+        export function loadJs(baseDir: string, jsList: Array<string>, cb?: Function): void;
+        export function loadJsWithImg(baseDir: string, jsList: Array<string>, cb?: Function): void;
+        export function loadTxt(url: string, cb?: Function): void;
+        export function loadCsb(url: string, cb?: Function): void;
+        export function loadJson(url: string, cb?: Function): void;
+        export function loadImg(url: string, option: Object, callback: Function): AsyncPool;
+        export function loadImg(url: string, callback: Function): AsyncPool;
+        export function getUrl(basePath: string, url?: string): string;
+        export function load(url: string, option: Object, loadCallback: Function| Object): AsyncPool;
+        export function load(url: string, loadCallback: Function| Object): AsyncPool;
+        export function loadAliases(url: string, callback?: Function):void;
+        export function register(extNames: string, loader: Function): void;
+        export function getRes(url:string):any;
+        export function release(url: string): void;
+        export function releaseAll():void;
+    }
+    export function formatStr(str: string, ... args: string[]):string;
+    export function create3DContext(canvas: HTMLCanvasElement, opt_attribs: Object): WebGLRenderingContext;
+
+    export var ORIENTATION_PORTRAIT: Number;
+    export var ORIENTATION_PORTRAIT_UPSIDE_DOWN: Number;
+    export var ORIENTATION_LANDSCAPE_LEFT: Number;
+    export var ORIENTATION_LANDSCAPE_RIGHT: Number;
+
+    export var game: IGame;
+    interface IGame {
+        DEBUG_MODE_NONE: number;
+        DEBUG_MODE_INFO: number;
+        DEBUG_MODE_WARN: number;
+        DEBUG_MODE_ERROR: number;
+        DEBUG_MODE_INFO_FOR_WEB_PAGE: number;
+        DEBUG_MODE_WARN_FOR_WEB_PAGE: number;
+        DEBUG_MODE_ERROR_FOR_WEB_PAGE: number;
+        EVENT_HIDE: string;
+        EVENT_SHOW: string;
+        CONFIG_KEY: IConfigKey;
+        config: Object;
+        onStart: Function;
+        onStop: Function;
+        setFrameRate(frameRate: any):void;
+        restart():void;
+        run(id: any): void;
+        prepare(cb: ()=>void):void;
+    }
+    interface IConfigKey {
+        engineDir: string;
+        dependencies: string;
+        debugMode: string;
+        showFPS: string;
+        frameRate: string;
+        id: string;
+        renderMode: string;
+        jsList: string;
+        classReleaseMode: string;
     }
 
     export class Class {
@@ -174,7 +269,7 @@
     export function sizeEqualToPoint(size1: Size, size2: Size): boolean;
 
     export class Rect {
-        constructor(x:number, y:number,width:number,height:number);
+        constructor(x: number, y: number, width: number, height: number);
     }
     export function rect(rect: Rect): Rect;
     export function rect(x: number, y: number, width: number, height: number): Rect;
