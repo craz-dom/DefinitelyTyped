@@ -426,7 +426,7 @@
         export var pfx: string;
         export var hd: boolean;
         export var trans: string;
-        export function translate(a: { x: number; y: number;}): string;
+        export function translate(a: { x: number; y: number; }): string;
         export function rotate(a: number): string;
         export function scale(a: number): string;
         export function skew(a: number): string;
@@ -442,11 +442,11 @@
     export var DEG: number;
     export var UINT_MAX: number;
     export function swap(x: string, y: string, ref: Object): void;
-    export function lerp(a:number, b:number, r:number): void;
+    export function lerp(a: number, b: number, r: number): void;
     export function rand(): number;
     export function randomMinus1To1(): number;
     export function random0To1(): number;
-    export function degreesToRadians(angle:number): number;
+    export function degreesToRadians(angle: number): number;
     export function radiansToDegrees(angle: number): number;
     export function radiansToDegress(angle: number): number;
     export var REPEAT_FOREVER: number;
@@ -458,9 +458,9 @@
     export function incrementGLDraws(addNumber: number): void;
     export var FLT_EPSILON: number;
     export function contentScaleFactor(): number;
-    export function pointPointsToPixels(points: Point):Point;
-    export function pointPixelsToPoints(pixels: Point):Point;
-    export function sizePointsToPixels(sizeInPoints: Size):Size;
+    export function pointPointsToPixels(points: Point): Point;
+    export function pointPixelsToPoints(pixels: Point): Point;
+    export function sizePointsToPixels(sizeInPoints: Size): Size;
     export function sizePixelsToPoints(sizeInPixels: Size): Size;
     export function rectPixelsToPoints(pixel: Rect): Rect;
     export function rectPointsToPixels(point: Rect): Rect;
@@ -545,4 +545,74 @@
     export function arrayAppendObjectsToIndex<T>(arr: Array<T>, addObjs: Array<T>, index: number): Array<T>;
     export function copyArray<T>(arr: Array<T>): Array<T>;
     export function copyArray(arr: Array<any>): Array<any>;
+
+    export class Color {
+        constructor(r: number, g: number, b: number, a: number, arrayBuffer: ArrayBuffer, offset: number);
+        a_undefined: number;
+    }
+    export function color(r: number, g: number, b: number, a: number, arrayBuffer?: ArrayBuffer, offset?: number): Color;
+    export function color(r: Color): Color;
+    export function color(r: String): Color;
+    export function color(): Color;
+    export module Color {
+        export var BYTES_PER_ELEMENT: number;
+    }
+    export class Vertex2F {
+        constructor(x: number, y: number, arrayBuffer?: ArrayBuffer, offset?: number);
+    }
+    export module Vertex2F {
+        export var BYTES_PER_ELEMENT: number;
+    }
+    export class Vertex3F {
+        constructor(x: number, y: number, z: number, arrayBuffer?: ArrayBuffer, offset?: number);
+    }
+    export module Vertex3F {
+        export var BYTES_PER_ELEMENT: number;
+    }
+    export class Tex2F {
+        constructor(u: number, v: number, arrayBuffer?: ArrayBuffer, offset?: number);
+    }
+    export module Tex2F {
+        export var BYTES_PER_ELEMENT: number;
+    }
+    export class Quad2 {
+        constructor(tl: Vertex2F, tr: Vertex2F, bl: Vertex2F, br: Vertex2F, arrayBuffer?: ArrayBuffer, offset?: number);
+    }
+    export module Quad2 {
+        export var BYTES_PER_ELEMENT: number;
+    }
+    export class Quad3 {
+        constructor(bl1: Vertex3F, br1: Vertex3F, tl1: Vertex3F, tr1: Vertex3F);
+        bl: Vertex3F;
+        br: Vertex3F;
+        tl: Vertex3F;
+        tr: Vertex3F;
+    }
+    export class V3F_C4B_T2F {
+        constructor(vertices?: Vertex3F, colors?: Color, texCoords?: Tex2F, arrayBuffer?: ArrayBuffer, offset?: Number);
+    }
+    export module V3F_C4B_T2F {
+        export var BYTES_PER_ELEMENT: number;
+    }
+    export class V3F_C4B_T2F_Quad {
+        constructor(tl?: V3F_C4B_T2F, tr?: V3F_C4B_T2F, bl?: V3F_C4B_T2F, br?: V3F_C4B_T2F, arrayBuffer?: ArrayBuffer, offset?: number);
+    }
+    export module V3F_C4B_T2F_Quad {
+        export var BYTES_PER_ELEMENT: number;
+    }
+    export function V3F_C4B_T2F_QuadZero(): V3F_C4B_T2F_Quad;
+    export function V3F_C4B_T2F_QuadCopy(sourceQuad: V3F_C4B_T2F_Quad): V3F_C4B_T2F_Quad;
+    export function V3F_C4B_T2F_QuadsCopy(sourceQuads: V3F_C4B_T2F_Quad[]): V3F_C4B_T2F_Quad[];
+    export class V2F_C4B_T2F {
+        constructor(vertices?: Vertex2F, colors?: Color, texCoords?: Tex2F, arrayBuffer?: ArrayBuffer, offset?: number);
+    }
+    export module V2F_C4B_T2F {
+        export var BYTES_PER_ELEMENT: number;
+    }
+    export class V2F_C4B_T2F_Triangle {
+        constructor(a?: V2F_C4B_T2F, b?: V2F_C4B_T2F, c?: V2F_C4B_T2F, arrayBuffer?: ArrayBuffer, offset?: number);
+    }
+    export module V2F_C4B_T2F_Triangle {
+        export var BYTES_PER_ELEMENT: number;
+    }
 }
