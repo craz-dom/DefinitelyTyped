@@ -1,0 +1,17 @@
+﻿declare module cc.loader {
+    /**
+     * Load binary data by url.
+     * @function
+     * @param {String} url
+     * @param {Function} [cb]
+     */
+    export function loadBinary(url: string, cb: Function);
+
+    /**
+     * Load binary data by url synchronously
+     * @function
+     * @param {String} url
+     * @return {Uint8Array}
+     */
+    export function loadBinarySync(url:string):Uint8Array;
+}

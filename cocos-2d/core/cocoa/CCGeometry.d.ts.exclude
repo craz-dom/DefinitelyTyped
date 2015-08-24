@@ -1,0 +1,215 @@
+﻿declare module cc {
+    /**
+     * export function Point is the class for point object, please do not use its constructor to create points, use export function p() alias function instead.
+     * @class export function Point
+     * @param {Number} x
+     * @param {Number} y
+     * @see export function p
+     */
+    export class Point {
+        x: number;
+        y: number;
+        constructor(x: number, y: number);
+    }
+
+    /**
+     * Helper function that creates a export function Point.
+     * @function
+     * @param {Number|export function Point} x a Number or a size object
+     * @param {Number} y
+     * @return {export function Point}
+     * @example
+     * var point1 = export function p();
+     * var point2 = export function p(100, 100);
+     * var point3 = export function p(point2);
+     * var point4 = export function p({x: 100, y: 100});
+     */
+    export function p(x: number, y: number): Point;
+
+    /**
+     * Check whether a point's value equals to another
+     * @function
+     * @param {export function Point} point1
+     * @param {export function Point} point2
+     * @return {Boolean}
+     */
+    export function pointEqualToPoint(point1: Point, point2: Point): boolean;
+    
+    /**
+     * export function Size is the class for size object, please do not use its constructor to create sizes, use export function size() alias function instead.
+     * @class export function Size
+     * @param {Number} width
+     * @param {Number} height
+     * @see export function size
+     */
+    export class Size{
+        width: number;
+        height: number;
+        constructor(width: number, height: number);
+    }
+
+    /**
+     * Helper function that creates a export function Size.
+     * @function
+     * @param {Number|export function Size} w width or a size object
+     * @param {Number} h height
+     * @return {export function Size}
+     * @example
+     * var size1 = export function size();
+     * var size2 = export function size(100,100);
+     * var size3 = export function size(size2);
+     * var size4 = export function size({width: 100, height: 100});
+     */
+    export function size(w: number, h: number): Size;
+
+    /**
+     * Check whether a point's value equals to another
+     * @function
+     * @param {export function Size} size1
+     * @param {export function Size} size2
+     * @return {Boolean}
+     */
+    export function sizeEqualToSize(size1: Size, size2: Size): boolean;
+
+
+    /**
+     * export function Rect is the class for rect object, please do not use its constructor to create rects, use export function rect() alias function instead.
+     * @class export function Rect
+     * @param {Number} width
+     * @param {Number} height
+     * @see export function rect
+     */
+    export class Rect{
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+        constructor(x: number, y: number, width: number, height: number);
+    }
+
+    /**
+     * Helper function that creates a export function Rect.
+     * @function
+     * @param {Number|export function Rect} x a number or a rect object
+     * @param {Number} y
+     * @param {Number} w
+     * @param {Number} h
+     * @returns {export function Rect}
+     * @example
+     * var rect1 = export function rect();
+     * var rect2 = export function rect(100,100,100,100);
+     * var rect3 = export function rect(rect2);
+     * var rect4 = export function rect({x: 100, y: 100, width: 100, height: 100});
+     */
+    export function rect(x: number, y: number, w: number, h: number): Rect;
+
+    /**
+     * Check whether a rect's value equals to another
+     * @function
+     * @param {export function Rect} rect1
+     * @param {export function Rect} rect2
+     * @return {Boolean}
+     */
+    export function rectEqualToRect(rect1: Rect, rect2: Rect): boolean;
+
+    /**
+     * Check whether the rect1 contains rect2
+     * @function
+     * @param {export function Rect} rect1
+     * @param {export function Rect} rect2
+     * @return {Boolean}
+     */
+    export function rectContainsRect(rect1: Rect, rect2: Rect):boolean;
+
+    /**
+     * Returns the rightmost x-value of a rect
+     * @function
+     * @param {export function Rect} rect
+     * @return {Number} The rightmost x value
+     */
+    export function rectGetMaxX(rect: Rect):number;
+
+    /**
+     * Return the midpoint x-value of a rect
+     * @function
+     * @param {export function Rect} rect
+     * @return {Number} The midpoint x value
+     */
+    export function rectGetMidX(rect: Rect):number;
+    /**
+     * Returns the leftmost x-value of a rect
+     * @function
+     * @param {export function Rect} rect
+     * @return {Number} The leftmost x value
+     */
+    export function rectGetMinX(rect: Rect): number;
+
+    /**
+     * Return the topmost y-value of a rect
+     * @function
+     * @param {export function Rect} rect
+     * @return {Number} The topmost y value
+     */
+    export function rectGetMaxY(rect: Rect): number;
+
+    /**
+     * Return the midpoint y-value of `rect'
+     * @function
+     * @param {export function Rect} rect
+     * @return {Number} The midpoint y value
+     */
+    export function rectGetMidY(rect: Rect): number;
+
+    /**
+     * Return the bottommost y-value of a rect
+     * @function
+     * @param {export function Rect} rect
+     * @return {Number} The bottommost y value
+     */
+    export function rectGetMinY(rect: Rect): number;
+
+    /**
+     * Check whether a rect contains a point
+     * @function
+     * @param {export function Rect} rect
+     * @param {export function Point} point
+     * @return {Boolean}
+     */
+    export function rectContainsPoint(rect: Rect, point: Point): boolean;
+
+    /**
+     * Check whether a rect intersect with another
+     * @function
+     * @param {export function Rect} rectA
+     * @param {export function Rect} rectB
+     * @return {Boolean}
+     */
+    export function rectIntersectsRect(ra: Rect, rb: Rect):boolean;
+
+    /**
+     * Check whether a rect overlaps another
+     * @function
+     * @param {export function Rect} rectA
+     * @param {export function Rect} rectB
+     * @return {Boolean}
+     */
+    export function rectOverlapsRect(rectA: Rect, rectB: Rect):boolean;
+
+    /**
+     * Returns the smallest rectangle that contains the two source rectangles.
+     * @function
+     * @param {export function Rect} rectA
+     * @param {export function Rect} rectB
+     * @return {export function Rect}
+     */
+    export function rectUnion(rectA: Rect, rectB: Rect): Rect;
+
+    /**
+     * Returns the overlapping portion of 2 rectangles
+     * @function
+     * @param {export function Rect} rectA
+     * @param {export function Rect} rectB
+     * @return {export function Rect}
+     */
+    export function rectIntersection(rectA: Rect, rectB: Rect): Rect;
+}

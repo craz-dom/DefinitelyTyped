@@ -1,0 +1,85 @@
+﻿declare module cc {
+    /**
+     * Function added for JS bindings compatibility. Not needed in cocos2d-html5.
+     * @function
+     * @param {object} jsObj subclass
+     * @param {object} superclass
+     */
+    export function associateWithNative(jsObj: Object, superclass: Object): void;
+
+    /**
+     * Key map for keyboard event
+     *
+     * @constant
+     * @type {Object}
+     * @example
+        export var eventManager.addListener({
+            event: export var EventListener.KEYBOARD,
+            onKeyPressed:  function(keyCode, event){
+                if (export var KEY["a"] == keyCode) {
+                    export var log("A is pressed");
+                }
+            }
+        }, this);
+     */
+    export var KEY: Object;
+
+    /**
+     * Image Format:JPG
+     * @constant
+     * @type {Number}
+     */
+    export var FMT_JPG: number;
+
+    /**
+     * Image Format:PNG
+     * @constant
+     * @type {Number}
+     */
+    export var FMT_PNG: number;
+
+    /**
+     * Image Format:TIFF
+     * @constant
+     * @type {Number}
+     */
+    export var FMT_TIFF: number;
+
+    /**
+     * Image Format:RAWDATA
+     * @constant
+     * @type {Number}
+     */
+    export var FMT_RAWDATA: number;
+
+    /**
+     * Image Format:WEBP
+     * @constant
+     * @type {Number}
+     */
+    export var FMT_WEBP: number;
+
+    /**
+     * Image Format:UNKNOWN
+     * @constant
+     * @type {Number}
+     */
+    export var FMT_UNKNOWN: number;
+
+    /**
+     * get image format by image data
+     * @function
+     * @param {Array} imgData
+     * @returns {Number}
+     */
+    export function getImageFormatByData(imgData: Array<number>): number;
+
+    /**
+     * Another way to subclass: Using Google Closure.
+     * The following code was copied + pasted from goog.base / goog.inherits
+     * @function
+     * @param {Function} childCtor
+     * @param {Function} parentCtor
+     */
+    export function inherits(childCtor: Function, parentCtor: Function);
+}
